@@ -1,0 +1,9 @@
+
+# 开发指南
+
+1. 如果需要加入第三方jar包，请在pom.xml 文件中添加dependency；
+2. 在org.scnu.cluster中新建自己的包，比如叫tom，那么就会产生一个org.scnu.cluster.tom的包；
+3. 在新建的org.scnu.cluster.tom下新建自己的算法 比如MyCluster,MyCluster需要实现ClusterInterface接口；
+4. 在test目录建立测试类，拷贝org.scnu.cluster.fansy.FrontBackClusterTest类到自己到目录，如org.scnu.cluster.tom
+并修改类名为MyClusterTest, 修改其中的实现；
+5. 右键运行测试MyClusterTest；
