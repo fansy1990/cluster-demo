@@ -13,6 +13,11 @@ import java.util.List;
  */
 public class Instance implements Cloneable {
     private static final Logger log = LoggerFactory.getLogger(Instance.class);
+
+    public double[] getData() {
+        return data;
+    }
+
     double[] data = null;
 
     public int getLabel() {
