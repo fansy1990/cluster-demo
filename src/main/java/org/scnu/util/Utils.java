@@ -3,6 +3,10 @@ package org.scnu.util;
 import org.junit.Assert;
 import org.scnu.model.Instance;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -18,21 +22,43 @@ public class Utils {
      * 返回测试输入数据
      * @return
      */
-    public static List<Instance> getInputs(){
+    public static List<Instance> getInputs1(){
         List<Instance> inputs = new ArrayList<Instance>(){
             {
-                add(new Instance("0,1,2",","));
-                add(new Instance("0.0,1.1,2",","));
-                add(new Instance("0.1,1.2,2",","));
-                add(new Instance("0,1,2.3",","));
-                add(new Instance("0,1.4,2",","));
-                add(new Instance("5,5.4,9",","));
-                add(new Instance("5.3,5.4,9",","));
-                add(new Instance("5,5.4,9",","));
-                add(new Instance("5,4.4,9",","));
-                add(new Instance("5,7.4,9.8",","));
+                add(new Instance("1.3,1,2",","));
+                add(new Instance("4.0,1.1,2.2",","));
+                add(new Instance("3.1,6.2,2.3",","));
+                add(new Instance("2.9,4,2.3",","));
+                add(new Instance("3.9,1.4,2",","));
+                add(new Instance("5.3,5.4,9.6",","));
+                add(new Instance("2.3,6.4,5.9",","));
+                add(new Instance("5.8,3.4,9.1",","));
+                add(new Instance("7.5,4.4,9.2",","));
+                add(new Instance("5.5,7.4,9.8",","));
             }
         };
+        return inputs;
+    }
+
+    /**
+     * 获取数据
+     * @return
+     */
+    public static List<Instance> getInputs() throws FileNotFoundException {
+        List<Instance> inputs = new ArrayList<>();
+        try {
+            FileReader fr = new FileReader(Utils.class.getClassLoader().getResource( "kdata.csv").getFile());
+            BufferedReader br = new BufferedReader(fr);
+            String line ;
+            while ((line = br.readLine()) != null) {
+                inputs.add(new Instance(line,","));
+            }
+
+            br.close();
+            fr.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return inputs;
     }
 

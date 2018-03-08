@@ -7,6 +7,7 @@ import org.scnu.cluster.ClusterInterface;
 import org.scnu.model.Instance;
 import org.scnu.util.Utils;
 
+import java.io.FileNotFoundException;
 import java.util.*;
 
 /**
@@ -18,7 +19,11 @@ public class FrontBackClusterTest {
     private  List<Instance> inputs;
     @Before
     public  void init(){
-        this.inputs = Utils.getInputs();
+        try {
+            this.inputs = Utils.getInputs();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
