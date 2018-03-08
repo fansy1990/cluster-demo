@@ -40,14 +40,16 @@ public class Utils {
     public static void justForTest(List<Instance> inputs,List<Instance> results,int k){
         //=============================== 测试
         try {
+
+            Assert.assertNotNull("输出结果不能是Null!",results);
             // 1. 输入输出记录相同
-            Assert.assertEquals(inputs.size(), results.size());
+            Assert.assertEquals("输入记录需要和输出记录相同!",inputs.size(), results.size());
             // 2. 输出结果每个都有值，而且在[0,k)
             for (Instance result : results) {
-                Assert.assertTrue(result.getLabel() >= 0 && result.getLabel() < k);
+                Assert.assertTrue("标签类必须在[0,k)之间!",result.getLabel() >= 0 && result.getLabel() < k);
             }
         }catch (Exception e){
-            Assert.assertTrue(false);
+            Assert.assertTrue(e.getMessage(),false);
         }
     }
 }

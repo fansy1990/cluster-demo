@@ -34,7 +34,7 @@ public class FrontBackClusterTest {
             List<Instance> results = clusterInterface.runCluster(inputs, params);
             Utils.justForTest(inputs,results,2);
         }catch (Exception e){
-            Assert.assertFalse(true);
+            Assert.assertFalse(e.getMessage(),true);
         }
 
 
