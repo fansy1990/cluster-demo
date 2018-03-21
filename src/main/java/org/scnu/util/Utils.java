@@ -72,7 +72,7 @@ public class Utils {
             Assert.assertEquals("输入记录需要和输出记录相同!",inputs.size(), results.size());
             // 2. 输出结果每个都有值，而且在[0,k)
             for (Instance result : results) {
-                Assert.assertTrue("标签类必须在[0,k)之间!",result.getLabel() >= 0 && result.getLabel() < k);
+                Assert.assertTrue("标签类必须在[0,k)之间,label: "+result.getLabel(),result.getLabel() >= 0 && result.getLabel() < k);
             }
         }catch (Exception e){
             Assert.assertTrue(e.getMessage(),false);

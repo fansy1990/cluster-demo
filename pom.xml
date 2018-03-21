@@ -20,6 +20,8 @@
         <log4j.version>1.7.2</log4j.version>
         <!--  在下面添加你自己的依赖 -->
 
+        <!-- weka -->
+        <weka.version>3.6.12</weka.version>
     </properties>
 
     <dependencies>
@@ -37,6 +39,14 @@
         </dependency>
 
         <!-- 在下面添加你自己的依赖 -->
+
+        <!-- https://mvnrepository.com/artifact/nz.ac.waikato.cms.weka/weka-stable -->
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>weka-stable</artifactId>
+            <version>${weka.version}</version>
+        </dependency>
+
 
     </dependencies>
 </project>
