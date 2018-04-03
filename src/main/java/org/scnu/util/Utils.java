@@ -23,6 +23,8 @@ public class Utils {
 
     public static final int SSH_TIMEOUT= 5000;
 
+    public static final String rserv="rserv.properties";
+
     public static final String PYTHON_PREFIX_PATH="/tmp/python_workspace";
 
     public static final String PYTHON_INPUT="input";
@@ -80,7 +82,11 @@ public class Utils {
     }
 
     public static RemoteHost getExampleHost(){
-        RemoteHost remoteHost = new RemoteHost("root", "123456", "master", 22);
+        String user = PropertyUtils.getValue(rserv,"ssh.user");
+        String password = PropertyUtils.getValue(rserv,"ssh.password");
+        String host = PropertyUtils.getValue(rserv,"ssh.host");
+        int port = Integer.parseInt(PropertyUtils.getValue(rserv,"ssh.port"));
+        RemoteHost remoteHost = new RemoteHost(user, password, host, port);
         return remoteHost;
     }
 

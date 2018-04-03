@@ -11,8 +11,7 @@
 
 
 ## Python 算法；
-1. 修改src/main/java/org/scnu/util/Utils中：
-    RemoteHost remoteHost = new RemoteHost("root", "123456", "master", 22);
+1. 修改src/main/resources/rserv.properties中：
     为实际的远程地址，用户名，密码及端口号；
 2. 远程python需要安装：
     pip3 install -U scikit-learn
