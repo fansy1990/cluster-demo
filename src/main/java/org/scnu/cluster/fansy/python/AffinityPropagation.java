@@ -10,7 +10,7 @@ import static org.scnu.util.Utils.*;
 
 /**
  * 参数：
- * <input> <output> <splitter> <quantile> <n_samples> <random_state> <min_bin_freq>
+ * <input> <output> <splitter> <damping> <max_iter> <convergence_iter> <preference>
  * input: 输入
  * output：输出
  * splitter：输入列分隔符
@@ -43,7 +43,7 @@ public class AffinityPropagation extends AbstractClusterPython {
     private static final String py_file = "python/py_affinity_propagation.py";
     @Override
     public String prepareCommand(RemoteHost remoteHost,Map<String, String> params) {
-        params.put(PYTHON_ALGORITHM_NAME,"Mean Shift");
+        params.put(PYTHON_ALGORITHM_NAME,"Affinity Propagation");
         //1. upload python script
         String remote_algorithm = PYTHON_PREFIX_PATH+ File.separator+
                 "py_affinity_propagation_"+System.currentTimeMillis()+".py";
