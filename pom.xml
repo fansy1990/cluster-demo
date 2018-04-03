@@ -19,9 +19,11 @@
         <junit.version>4.12</junit.version>
         <log4j.version>1.7.2</log4j.version>
         <!--  在下面添加你自己的依赖 -->
-
+        <jsch.version>0.1.54</jsch.version>
         <!-- weka -->
         <weka.version>3.6.12</weka.version>
+        <!--jpython -->
+        <jpython.version>2.7.0</jpython.version>
     </properties>
 
     <dependencies>
@@ -45,6 +47,20 @@
             <groupId>nz.ac.waikato.cms.weka</groupId>
             <artifactId>weka-stable</artifactId>
             <version>${weka.version}</version>
+        </dependency>
+
+        <!-- 远程连接 -->
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>${jsch.version}</version>
+        </dependency>
+
+        <!--jpython -->
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython-standalone</artifactId>
+            <version>${jpython.version}</version>
         </dependency>
 
 

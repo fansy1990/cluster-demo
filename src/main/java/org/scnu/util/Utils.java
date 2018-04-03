@@ -2,11 +2,13 @@ package org.scnu.util;
 
 import org.junit.Assert;
 import org.scnu.model.Instance;
+import org.scnu.model.RemoteHost;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.rmi.Remote;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -18,6 +20,21 @@ import java.util.Set;
  * @date 2018/3/8 下午2:20.
  */
 public class Utils {
+
+    public static final int SSH_TIMEOUT= 5000;
+
+    public static final String PYTHON_PREFIX_PATH="/tmp/python_workspace";
+
+    public static final String PYTHON_INPUT="input";
+
+    public static final String PYTHON_OUTPUT="output";
+    public static final String PYTHON_REMOTE_INPUT="remote_input";
+
+    public static final String PYTHON_REMOTE_OUTPUT="remote_output";
+
+    public static final String PYTHON_ALGORITHM="python_algorithm";
+    public static final String PYTHON_ALGORITHM_NAME="python_algorithm_name";
+
     /**
      * 返回测试输入数据
      * @return
@@ -62,6 +79,10 @@ public class Utils {
         return inputs;
     }
 
+    public static RemoteHost getExampleHost(){
+        RemoteHost remoteHost = new RemoteHost("root", "123456", "master", 22);
+        return remoteHost;
+    }
 
     public static void justForTest(List<Instance> inputs,List<Instance> results,int k){
         //=============================== 测试
@@ -78,4 +99,5 @@ public class Utils {
             Assert.assertTrue(e.getMessage(),false);
         }
     }
+
 }

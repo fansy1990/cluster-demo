@@ -7,3 +7,15 @@
 4. 在test目录建立测试类，拷贝org.scnu.cluster.fansy.FrontBackClusterTest类到自己到目录，如org.scnu.cluster.tom
 并修改类名为MyClusterTest, 修改其中的实现；
 5. 右键运行测试MyClusterTest；
+
+
+
+## Python 算法；
+1. 修改src/main/java/org/scnu/util/Utils中：
+    RemoteHost remoteHost = new RemoteHost("root", "123456", "master", 22);
+    为实际的远程地址，用户名，密码及端口号；
+2. 远程python需要安装：
+    pip3 install -U scikit-learn
+    pip3 install numpy
+    pip3 install scipy
+    版本为：Python 3.5.2
